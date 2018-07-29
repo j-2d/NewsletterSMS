@@ -1,2 +1,2 @@
 # NewsletterSMS
-Send daily text with news, scores, ect.
+Send daily text with news, scores, etc.
