@@ -1,6 +1,5 @@
 sms_send(message):
 
-#hi Jamie
 
 def string_combiner(json_formatter):
 
