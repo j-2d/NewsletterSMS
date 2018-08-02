@@ -26,17 +26,9 @@ def newsletterSMS(config_file, time, phone):
         message = string_combiner(news_formatted)
         sms_send(message, phone)
 
-# TODO
-# allow for text file and 4 digit, 24hr time value, and phone number to be input via cli
-# all three are required
-# uses argparse library
-def get_parser():
-
-    return parser
 
 #get values from cli and run main program with them
 def command_line_runner():
-    parser = get_parser()
     newsletterSMS(parser.config, parser.time, parser.phone)
 
 # run program
