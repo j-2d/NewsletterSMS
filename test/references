@@ -1,0 +1,7 @@
+Config Files:
+parser library: https://docs.python.org/3/library/configparser.html
+config file format: https://docs.python.org/3/library/configparser.html#supported-ini-file-structure
+
+
+Env Files:
+parser library:
