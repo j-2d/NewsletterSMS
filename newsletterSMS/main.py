@@ -15,6 +15,12 @@ def string_combiner(json_formatter):
     return message
 
 # TODO
+# wait until the scheduled time to run the program
+def scheduler(time):
+
+
+
+# TODO
 class json_formatter(news_json):
 
 # TODO
