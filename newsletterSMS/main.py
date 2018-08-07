@@ -1,3 +1,9 @@
+import configparser
+
+config = configparser.ConfigParser()
+config.read('../.conf')
+
+
 # TODO
 # send message via sms
 def sms_send(message, phone):
