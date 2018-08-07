@@ -16,7 +16,7 @@ class api_querier(file):
 
 
 # main program
-# run continuously, wait until time input to sceduler
+# run continuously, wait until time input to scheduler
 # create json job, convert to formatted obj, combine to string obj, send
 def newsletterSMS(config_file, time, phone):
     while True:
