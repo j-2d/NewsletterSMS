@@ -1,5 +1,7 @@
 import configparser
 
+
+# move the variables from the settings files into a dictionary
 def def_vars(conf_path, env_path):
     settings = {}
     config = configparser.ConfigParser()
@@ -8,7 +10,8 @@ def def_vars(conf_path, env_path):
     env = configparser.ConfigParser()
     env.read(env_path)
 
-    settings["time"] = int(config['general']['time'])
+    settings['time'] = int(config['general']['time'])
+    # TODO: pull the rest of the values from the .config and .env into the dictionary
 
     return settings
 
@@ -35,7 +38,6 @@ def scheduler(time):
 
 # TODO
 class json_formatter(news_json):
-
 
 
 
