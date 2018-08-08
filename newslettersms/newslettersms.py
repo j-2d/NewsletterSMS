@@ -3,17 +3,18 @@ import configparser
 
 # move the variables from the settings files into a dictionary
 def def_vars(conf_path, env_path):
-    settings = {}
+    values = {}
     config = configparser.ConfigParser()
     config.read(conf_path)
 
     env = configparser.ConfigParser()
     env.read(env_path)
 
-    settings['time'] = int(config['general']['time'])
+    values['time'] = int(config['general']['time'])
+    values['phone'] = int(env['personal']['phone'])
     # TODO: pull the rest of the values from the .config and .env into the dictionary
 
-    return settings
+    return values
 
 # TODO
 # send message via sms
@@ -37,26 +38,26 @@ def scheduler(time):
     return
 
 # TODO
-class json_formatter(news_json):
+# class jsonFormatter(news_json):
 
 
 
 # TODO
-class api_querier(file):
+# class apiQuerier(file):
 
 
 # main program
 # run continuously, wait until time input to scheduler
 # create json job, convert to formatted obj, combine to string obj, send
-def newsletterSMS(time, phone):
+def newslettersms(values):
     while True:
-        scheduler(time)
-        news_json = api_querier()
-        news_formatted = json_formatter(news_json)
+        scheduler(values['time'])
+        news_json = apiQuerier()
+        news_formatted = jsonFormatter(news_json)
         message = string_combiner(news_formatted)
-        sms_send(message, phone)
+        sms_send(message, values['phone'])
 
 # run program
 if __name__ == '__main__':
-    def_vars('../.conf', '../.env')
-    newsletterSMS()
+    settings = def_vars('../.conf', '../.env')
+    newslettersms(settings)

@@ -18,6 +18,11 @@ Testing:
 
 [Example Docs](https://docs.python.org/3/library/unittest.html)
 
+Dictionaries:
+
+[Multiple Objects for each Key](https://stackoverflow.com/questions/3199171/append-multiple-values-for-one-key-in-python-dictionary)
+
+
 #
 
 ### Docs:
