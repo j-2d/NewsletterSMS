@@ -4,6 +4,7 @@ import configparser
 # move the variables from the settings files into a dictionary
 def def_vars(conf_path, env_path):
     values = {}
+    values2 = {}
     config = configparser.ConfigParser()
     config.read(conf_path)
 
@@ -12,6 +13,9 @@ def def_vars(conf_path, env_path):
 
     values['time'] = int(config['general']['time'])
     values['phone'] = int(env['personal']['phone'])
+
+    # use a for or while loop
+    values2['API'] = (env['API_key']) + (env['API_num'])
     # TODO: pull the rest of the values from the .config and .env into the dictionary
 
     return values
