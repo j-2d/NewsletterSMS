@@ -4,21 +4,25 @@ import configparser
 # move the variables from the settings files into a dictionary
 def def_vars(conf_path, env_path):
     values = {}
-    values2 = {}
-    config = configparser.ConfigParser()
-    config.read(conf_path)
+    values_api = {}
+    conf = configparser.ConfigParser()
+    conf.read(conf_path)
 
     env = configparser.ConfigParser()
     env.read(env_path)
 
-    values['time'] = int(config['general']['time'])
+    values['time'] = int(conf['general']['time'])
     values['phone'] = int(env['personal']['phone'])
 
     # use a for or while loop
-    values2['API'] = (env['API_key']) + (env['API_num'])
+    values_api['news'] = [(env['api_keys']['newsapi']),int(conf['api_order']['newsapi']),int(conf['newsapi']['num_stories'])]
+    values_api['sports'] = [(env['api_keys']['sportsapi']),int(conf['api_order']['sportsapi']),int(conf['sportsapi']['num_stories'])]
+    values_api['weather'] = [(env['api_keys']['weatherapi']),int(conf['api_order']['weatherapi']),int(conf['weatherapi']['num_stories'])]
+    values_api['school'] = [(env['api_keys']['schoolapi']),int(conf['api_order']['schoolapi']),int(conf['schoolapi']['num_stories'])]
+
     # TODO: pull the rest of the values from the .config and .env into the dictionary
 
-    return values
+    return values, values_api
 
 # TODO
 # send message via sms
