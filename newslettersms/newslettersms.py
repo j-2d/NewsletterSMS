@@ -51,21 +51,30 @@ def scheduler(time):
 
 
 # TODO
-# class apiQuerier(file):
+class apiQuerier:
+
+    def __init__(self, apivalues):
+
+
+    def get_json(num):
+
+
+    def get_source(num):
+
 
 
 # main program
 # run continuously, wait until time input to scheduler
-# create json job, convert to formatted obj, combine to string obj, send
-def newslettersms(values):
+# create json obj, convert to formatted obj, combine to string obj, send
+def newslettersms(values, values_api):
     while True:
         scheduler(values['time'])
-        news_json = apiQuerier()
+        news_json = apiQuerier(values_api)
         news_formatted = jsonFormatter(news_json)
         message = string_combiner(news_formatted)
         sms_send(message, values['phone'])
 
 # run program
 if __name__ == '__main__':
-    settings = def_vars('../.conf', '../.env')
-    newslettersms(settings)
+    settings, api_settings = def_vars('../.conf', '../.env')
+    newslettersms(settings, api_settings)
